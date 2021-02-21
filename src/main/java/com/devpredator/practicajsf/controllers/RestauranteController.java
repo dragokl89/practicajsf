@@ -18,9 +18,10 @@ import javax.annotation.PostConstruct;
  * @author c-ado
  *
  */
-@ManagedBean(name = "restaurante")
+@ManagedBean(name = "restaurantecontroller")
 @ViewScoped
 public class RestauranteController {
+	private List<Restaurante> restaurantesFiltrados = new ArrayList<>();
 	private List<Restaurante> restaurantes = new ArrayList<>();
 	private RestauranteService restauranteServicio = new RestauranteService();
 
@@ -46,5 +47,19 @@ public class RestauranteController {
 	 */
 	public void setRestaurantes(List<Restaurante> restaurantes) {
 		this.restaurantes = restaurantes;
+	}
+
+	/**
+	 * @return the restaurantesFiltrados
+	 */
+	public List<Restaurante> getRestaurantesFiltrados() {
+		return restaurantesFiltrados;
+	}
+
+	/**
+	 * @param restaurantesFiltrados the restaurantesFiltrados to set
+	 */
+	public void setRestaurantesFiltrados(List<Restaurante> restaurantesFiltrados) {
+		this.restaurantesFiltrados = restaurantesFiltrados;
 	}
 }
